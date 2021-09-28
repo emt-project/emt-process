@@ -6,8 +6,8 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title level="main">{{ title }}</title>
-            <title level="sub">Familiensache. Dynastische Handlungsspielräume in der Korrespondenz von Kaiserin Eleonora Magdalena von Pfalz-Neuburg (1655-1720)</title>
+            <title type="main">{{ title }}</title>
+            <title type="sub">Familiensache. Dynastische Handlungsspielräume in der Korrespondenz von Kaiserin Eleonora Magdalena von Pfalz-Neuburg (1655-1720)</title>
             <author>{{ sender }}</author>
             <editor>
                <name>Katrin Keller</name>
@@ -85,16 +85,24 @@
    </teiHeader>
    <facsimile>
 {%- for x in pages %}
+      {% if x.facs_string %}
+      {{ x.facs_string|safe }}
+      {% else %}
       <surface ulx="0" uly="0" lrx="{{ x.width }}" lry="{{ x.height }}">
          <graphic url="{{ x.url }}"/>
-      </surface>   
+      </surface>  
+      {% endif %} 
 {%- endfor %}
    </facsimile>
    <text type="letter">
       <body>
          <div xml:id="transcription">
          {%- for x in pages %}
+         {% if x.body_string %}
+         {{ x.body_string|safe }}
+         {% else %}
             <pb facs="{{ x.url }}" type="{{ x.p_type }}"/>
+         {% endif %}
          {%- endfor %}
          </div>
       </body>

@@ -1,3 +1,4 @@
 /env
+/tmp
 /.ipynb_checkpoints
 /data/editions/*.xml
