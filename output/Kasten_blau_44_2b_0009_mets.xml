@@ -41,7 +41,7 @@
             <mods:mods>
                <mods:extension>
                   <goobi:goobi>
-                     <goobi:metadata name="logicalPageNumber"></goobi:metadata>
+                     <goobi:metadata name="logicalPageNumber">1</goobi:metadata>
                   </goobi:goobi>
                </mods:extension>
             </mods:mods>
@@ -55,7 +55,7 @@
             <mods:mods>
                <mods:extension>
                   <goobi:goobi>
-                     <goobi:metadata name="logicalPageNumber"></goobi:metadata>
+                     <goobi:metadata name="logicalPageNumber">2</goobi:metadata>
                   </goobi:goobi>
                </mods:extension>
             </mods:mods>
@@ -69,7 +69,7 @@
             <mods:mods>
                <mods:extension>
                   <goobi:goobi>
-                     <goobi:metadata name="logicalPageNumber"></goobi:metadata>
+                     <goobi:metadata name="logicalPageNumber">3</goobi:metadata>
                   </goobi:goobi>
                </mods:extension>
             </mods:mods>
@@ -83,7 +83,7 @@
             <mods:mods>
                <mods:extension>
                   <goobi:goobi>
-                     <goobi:metadata name="logicalPageNumber"></goobi:metadata>
+                     <goobi:metadata name="logicalPageNumber">4</goobi:metadata>
                   </goobi:goobi>
                </mods:extension>
             </mods:mods>
@@ -107,20 +107,20 @@
    <mets:fileSec>
       <mets:fileGrp USE="LOCAL">
       
-         <mets:file ID="FILE_" MIMETYPE="image/jpg">
-            <mets:FLocat LOCTYPE="URL" xlink:href="images/master_EMT_Kasten_blau_44_2b_0005_media/"/>
+         <mets:file ID="FILE_Kasten_blau_44_2b_0005.jpg" MIMETYPE="image/jpg">
+            <mets:FLocat LOCTYPE="URL" xlink:href="images/master_EMT_Kasten_blau_44_2b_0005_media/Kasten_blau_44_2b_0005.jpg"/>
          </mets:file>
       
-         <mets:file ID="FILE_" MIMETYPE="image/jpg">
-            <mets:FLocat LOCTYPE="URL" xlink:href="images/master_EMT_Kasten_blau_44_2b_0005_media/"/>
+         <mets:file ID="FILE_Kasten_blau_44_2b_0006.jpg" MIMETYPE="image/jpg">
+            <mets:FLocat LOCTYPE="URL" xlink:href="images/master_EMT_Kasten_blau_44_2b_0005_media/Kasten_blau_44_2b_0006.jpg"/>
          </mets:file>
       
-         <mets:file ID="FILE_" MIMETYPE="image/jpg">
-            <mets:FLocat LOCTYPE="URL" xlink:href="images/master_EMT_Kasten_blau_44_2b_0005_media/"/>
+         <mets:file ID="FILE_Kasten_blau_44_2b_0007.jpg" MIMETYPE="image/jpg">
+            <mets:FLocat LOCTYPE="URL" xlink:href="images/master_EMT_Kasten_blau_44_2b_0005_media/Kasten_blau_44_2b_0007.jpg"/>
          </mets:file>
       
-         <mets:file ID="FILE_" MIMETYPE="image/jpg">
-            <mets:FLocat LOCTYPE="URL" xlink:href="images/master_EMT_Kasten_blau_44_2b_0005_media/"/>
+         <mets:file ID="FILE_Kasten_blau_44_2b_0008.jpg" MIMETYPE="image/jpg">
+            <mets:FLocat LOCTYPE="URL" xlink:href="images/master_EMT_Kasten_blau_44_2b_0005_media/Kasten_blau_44_2b_0008.jpg"/>
          </mets:file>
       
       </mets:fileGrp>
@@ -128,32 +128,32 @@
    <mets:structMap TYPE="LOGICAL">
       <mets:div DMDID="DMDLOG_0000" ID="LOG_0000" TYPE="Letter">
         
-         <mets:div DMDID="DMDLOG_" ID="LOG_" TYPE="page"/>
+         <mets:div DMDID="DMDLOG_1" ID="LOG_1" TYPE="page"/>
         
-         <mets:div DMDID="DMDLOG_" ID="LOG_" TYPE="page"/>
+         <mets:div DMDID="DMDLOG_2" ID="LOG_2" TYPE="page"/>
         
-         <mets:div DMDID="DMDLOG_" ID="LOG_" TYPE="page"/>
+         <mets:div DMDID="DMDLOG_3" ID="LOG_3" TYPE="page"/>
         
-         <mets:div DMDID="DMDLOG_" ID="LOG_" TYPE="page"/>
+         <mets:div DMDID="DMDLOG_4" ID="LOG_4" TYPE="page"/>
         
       </mets:div>
    </mets:structMap>
    <mets:structMap TYPE="PHYSICAL">
       <mets:div DMDID="DMDPHYS_0000" ID="PHYS_0000" TYPE="BoundBook">
          
-         <mets:div ID="PHYS_" ORDER="" ORDERLABEL="" TYPE="page">
+         <mets:div ID="PHYS_1" ORDER="1" ORDERLABEL="1" TYPE="page">
             <mets:fptr FILEID="FILE_"/>
          </mets:div>
          
-         <mets:div ID="PHYS_" ORDER="" ORDERLABEL="" TYPE="page">
+         <mets:div ID="PHYS_2" ORDER="2" ORDERLABEL="2" TYPE="page">
             <mets:fptr FILEID="FILE_"/>
          </mets:div>
          
-         <mets:div ID="PHYS_" ORDER="" ORDERLABEL="" TYPE="page">
+         <mets:div ID="PHYS_3" ORDER="3" ORDERLABEL="3" TYPE="page">
             <mets:fptr FILEID="FILE_"/>
          </mets:div>
          
-         <mets:div ID="PHYS_" ORDER="" ORDERLABEL="" TYPE="page">
+         <mets:div ID="PHYS_4" ORDER="4" ORDERLABEL="4" TYPE="page">
             <mets:fptr FILEID="FILE_"/>
          </mets:div>
          
@@ -161,13 +161,13 @@
    </mets:structMap>
    <mets:structLink>
     
-      <mets:smLink xlink:to="PHYS_" xlink:from="LOG_"/>
+      <mets:smLink xlink:to="PHYS_1" xlink:from="LOG_1"/>
     
-      <mets:smLink xlink:to="PHYS_" xlink:from="LOG_"/>
+      <mets:smLink xlink:to="PHYS_2" xlink:from="LOG_2"/>
     
-      <mets:smLink xlink:to="PHYS_" xlink:from="LOG_"/>
+      <mets:smLink xlink:to="PHYS_3" xlink:from="LOG_3"/>
     
-      <mets:smLink xlink:to="PHYS_" xlink:from="LOG_"/>
+      <mets:smLink xlink:to="PHYS_4" xlink:from="LOG_4"/>
     
    </mets:structLink>
 </mets:mets>

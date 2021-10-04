@@ -51,6 +51,7 @@ def main(folder, metadata, output="output/", mets_template="mets_template.xml", 
             if len(doc) > 0:
                 with open(os.path.join(output, f"{row['folder']}_mets.xml"), "w") as file:
                     author, adressee = row["weranwen"].split(" an ")
+                    print([d.values for d in doc])
                     file.write(template.render(docs=[d.values for d in doc], author=map_authors[author], adressee=map_authors[adressee], **doc[0]))
             doc = [row]
         else:

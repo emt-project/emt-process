@@ -65,8 +65,8 @@
    <mets:fileSec>
       <mets:fileGrp USE="LOCAL">
       {% for doc in docs %}
-         <mets:file ID="FILE_{{doc.Dateiname}}" MIMETYPE="image/jpg">
-            <mets:FLocat LOCTYPE="URL" xlink:href="images/master_EMT_{{folder}}_media/{{doc.Dateiname}}"/>
+         <mets:file ID="FILE_{{doc.0}}" MIMETYPE="image/jpg">
+            <mets:FLocat LOCTYPE="URL" xlink:href="images/master_EMT_{{folder}}_media/{{doc.0}}"/>
          </mets:file>
       {% endfor %}
       </mets:fileGrp>
