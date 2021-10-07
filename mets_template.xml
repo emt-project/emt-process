@@ -1,4 +1,4 @@
-<a?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <mets:mets OBJID="" xsi:schemaLocation="http://www.loc.gov/standards/premis/ http://www.loc.gov/standards/premis/v2/premis-v2-0.xsd http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.loc.gov/standards/mix/ http://www.loc.gov/standards/mix/mix.xsd" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:goobi="http://meta.goobi.org/v1.5.1/" xmlns:xlink="http://www.w3.org/1999/xlink">
    <mets:metsHdr CREATEDATE="2021-09-30T08:18:41Z">
       <mets:agent OTHERTYPE="SOFTWARE" ROLE="CREATOR" TYPE="OTHER">
@@ -17,7 +17,7 @@
                      <goobi:metadata name="singleDigCollection">DefaultCollection</goobi:metadata>
                      <goobi:metadata name="CatalogIDDigital">{{folder}}</goobi:metadata>
                      <goobi:metadata name="DateOfOrigin">{{Datum}}</goobi:metadata>
-                     <goobi:metadata name="TitleDocMain">{{weranwen}}, {{Datum}}</goobi:metadata>
+                     <goobi:metadata name="TitleDocMain">{{folder}}</goobi:metadata>
                      <goobi:metadata name="Author" type="person">
                         <goobi:lastName>{{author.lastName}}</goobi:lastName>
                         <goobi:firstName>{{author.firstName}}</goobi:firstName>
@@ -33,9 +33,8 @@
             </mods:mods>
          </mets:xmlData>
       </mets:mdWrap>
-   </mets:dmdSec>
-   {% for doc in docs %}
-   <mets:dmdSec ID="DMDLOG_{{doc.i}}">
+   </mets:dmdSec>{% for doc in docs %}
+   <mets:dmdSec ID="DMDLOG_{{loop.index}}">
       <mets:mdWrap MDTYPE="MODS">
          <mets:xmlData>
             <mods:mods>
@@ -82,12 +81,15 @@
       <mets:div DMDID="DMDPHYS_0000" ID="PHYS_0000" TYPE="BoundBook">
          {% for doc in docs %}
          <mets:div ID="PHYS_{{loop.index}}" ORDER="{{loop.index}}" ORDERLABEL="{{loop.index}}" TYPE="page">
-            <mets:fptr FILEID="FILE_{{doc.Dateiname}}"/>
+            <mets:fptr FILEID="FILE_{{doc.0}}"/>
          </mets:div>
          {% endfor %}
       </mets:div>
    </mets:structMap>
    <mets:structLink>
+    {% for doc in docs %}
+      <mets:smLink xlink:to="PHYS_{{loop.index}}" xlink:from="LOG_0000"/>
+    {% endfor %}
     {% for doc in docs %}
       <mets:smLink xlink:to="PHYS_{{loop.index}}" xlink:from="LOG_{{loop.index}}"/>
     {% endfor %}
