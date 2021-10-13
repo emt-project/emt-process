@@ -2,7 +2,7 @@
 <mets:mets OBJID="" xsi:schemaLocation="http://www.loc.gov/standards/premis/ http://www.loc.gov/standards/premis/v2/premis-v2-0.xsd http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.loc.gov/standards/mix/ http://www.loc.gov/standards/mix/mix.xsd" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:goobi="http://meta.goobi.org/v1.5.1/" xmlns:xlink="http://www.w3.org/1999/xlink">
    <mets:metsHdr CREATEDATE="2021-09-30T08:18:41Z">
       <mets:agent OTHERTYPE="SOFTWARE" ROLE="CREATOR" TYPE="OTHER">
-         <mets:name>EMT import v1 4-10-2021</mets:name>
+         <mets:name>EMT import {{ current_date }}</mets:name>
          <mets:note>Goobi</mets:note>
       </mets:agent>
    </mets:metsHdr>
@@ -63,25 +63,25 @@
    </mets:dmdSec>
    <mets:fileSec>
       <mets:fileGrp USE="LOCAL">
-      {% for doc in docs %}
-         <mets:file ID="FILE_{{doc.0}}" MIMETYPE="image/jpg">
-            <mets:FLocat LOCTYPE="URL" xlink:href="images/master_EMT_{{folder}}_media/{{doc.0}}"/>
+      {% for x in docs %}
+         <mets:file ID="FILE_{{x.Dateiname}}" MIMETYPE="image/jpg">
+            <mets:FLocat LOCTYPE="URL" xlink:href="images/master_EMT_{{folder}}_media/{{x.Dateiname}}"/>
          </mets:file>
       {% endfor %}
       </mets:fileGrp>
    </mets:fileSec>
    <mets:structMap TYPE="LOGICAL">
       <mets:div DMDID="DMDLOG_0000" ID="LOG_0000" TYPE="Letter">
-        {% for doc in docs %}
+        {% for x in docs %}
          <mets:div DMDID="DMDLOG_{{loop.index}}" ID="LOG_{{loop.index}}" TYPE="page"/>
         {% endfor %}
       </mets:div>
    </mets:structMap>
    <mets:structMap TYPE="PHYSICAL">
       <mets:div DMDID="DMDPHYS_0000" ID="PHYS_0000" TYPE="BoundBook">
-         {% for doc in docs %}
+         {% for x in docs %}
          <mets:div ID="PHYS_{{loop.index}}" ORDER="{{loop.index}}" ORDERLABEL="{{loop.index}}" TYPE="page">
-            <mets:fptr FILEID="FILE_{{doc.0}}"/>
+            <mets:fptr FILEID="FILE_{{x.Dateiname}}"/>
          </mets:div>
          {% endfor %}
       </mets:div>

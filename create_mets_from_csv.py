@@ -5,25 +5,7 @@ import jinja2
 import os
 import shutil
 
-map_authors = {
-    "EMT": {
-        "firstName": "Eleonore Magdalena Theresia von",
-        "lastName": "Pfalz-Neuburg",
-        "displayName": "Eleonore Magdalena Theresia von Pfalz-Neuburg"
-    },
-    "JW": {
-        "firstName": "Johann Wilhelm Joseph Janaz von der",
-        "lastName": "Pfalz",
-        "displayName": "Johann Wilhelm von der Pfalz"
-    },
-    "PW": {
-        "firstName": "Philipp Wilhelm von der",
-        "lastName": "Pfalz",
-        "displayName": "Philipp Wilhelm von der Pfalz"
-    },
-
-
-}
+from author_map import AUTHOR_MAP as map_authors
 
 @plac.pos("folder", "Folder containing the images", type=Path)
 @plac.pos("metadata", "CSV file containing the Metadata", type=Path)
