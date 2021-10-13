@@ -10,7 +10,7 @@ from author_map import AUTHOR_MAP as map_authors
 templateLoader = jinja2.FileSystemLoader(searchpath=".")
 templateEnv = jinja2.Environment(loader=templateLoader)
 template = templateEnv.get_template('mets_template.xml')
-output = "/mnt/acdh_resources/container/R_emt_19536/mets_new"
+output = "/mnt/acdh_resources/container/R_emt_19536/094_metadata_mets"
 path_orig = "/mnt/acdh_resources/container/R_emt_19536/Korrespondenz Eleonore Magdalena"
 files = glob.glob(f"{path_orig}/*/*.jpg")
 main_df = pd.read_csv('enriched_gesamt.csv')
@@ -19,7 +19,7 @@ current_date = f"{date.today()}"
 for gr, df in main_df.dropna(subset=['folder']).groupby('folder'):
     row = df.iloc[0]
     target_path = Path(
-        os.path.join(output, row['folder'], 'images', f"master_EMT_{row['folder']}_media")
+        os.path.join(output, row['folder'], 'images', f"EMT_{row['folder']}_master")
     )
     target_path.mkdir(parents=True, exist_ok=True)
     try:
