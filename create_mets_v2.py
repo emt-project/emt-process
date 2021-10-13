@@ -1,6 +1,7 @@
 import os
-import pandas as pd
+import shutil
 import glob
+import pandas as pd
 import jinja2
 from datetime import date
 from pathlib import Path
@@ -20,13 +21,20 @@ for gr, df in main_df.dropna(subset=['folder']).groupby('folder'):
     target_path = Path(
         os.path.join(output, row['folder'], 'images', f"master_EMT_{row['folder']}_media")
     )
-    print(target_path)
     target_path.mkdir(parents=True, exist_ok=True)
-    author, adressee = row["weranwen"].split(" an ")
+    try:
+        author, adressee = row["weranwen"].split(" an ")
+    except AttributeError:
+        author, adressee = 'NN', 'NN'
     docs = []
     with open(os.path.join(output, row['folder'], "meta.xml"), "w") as file:
         for i, cur_row in df.iterrows():
+            cur_file_name = cur_row['Dateiname']
             docs.append(dict(cur_row))
+            source_file = [x for x in files if x.endswith(cur_file_name)][0]
+            target_file = os.path.join(target_path, cur_file_name)
+            print(f"copy {source_file} to {target_file}")
+            shutil.copyfile(source_file, target_file)
         file.write(
             template.render(
                 docs=[d for d in docs],

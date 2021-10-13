@@ -14,4 +14,9 @@ AUTHOR_MAP = {
         "lastName": "Pfalz",
         "displayName": "Philipp Wilhelm von der Pfalz"
     },
+    "NN": {
+        "firstName": "N.",
+        "lastName": "N.",
+        "displayName": "N. N."
+    },
 }

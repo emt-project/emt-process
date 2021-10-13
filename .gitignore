@@ -4,3 +4,4 @@
 /data/editions/*.xml
 *.pyc
 Untitled.ipynb
+__pycache__/
