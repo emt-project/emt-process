@@ -25,12 +25,15 @@ for gr, df in main_df.dropna(subset=['folder']).groupby('folder'):
             )
         )
         target_path.mkdir(parents=True, exist_ok=True)
-        if " an " in row['weranwen']:
-            try:
-                author, adressee = row["weranwen"].split(" an ")
-            except AttributeError:
+        try:
+            if " an " in row['weranwen']:
+                try:
+                    author, adressee = row["weranwen"].split(" an ")
+                except AttributeError:
+                    author, adressee = 'NN', 'NN'
+            else:
                 author, adressee = 'NN', 'NN'
-        else:
+        except:
             author, adressee = 'NN', 'NN'
         docs = []
         with open(os.path.join(output, row['folder'], "meta.xml"), "w") as file:
