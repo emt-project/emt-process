@@ -18,7 +18,7 @@ main_df = pd.read_csv('enriched_gesamt.csv')
 current_date = f"{date.today()}"
 for gr, df in main_df.dropna(subset=['folder']).groupby('folder'):
     row = df.iloc[0]
-    if "Kasten_blau_45_9_" in row['folder']:
+    if "Kasten_blau_45_15_" in row['folder']:
         target_path = Path(
             os.path.join(
                 output, row['folder'], 'images', f"EMT_{row['folder']}_master"
