@@ -37,4 +37,4 @@ jobs:
           pip install -r requirements_push_transkribus.txt
           ls -d $PWD/*
           pwd
-          import-goobi-mets-to-transkribus --file-path /home/runner/work/emt-process/emt_data/import_transkribus_letters.csv
+          import-goobi-mets-to-transkribus --file-path /home/runner/work/emt-process/emt-process/emt-data/import_transkribus_letters.csv
