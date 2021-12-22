@@ -17,6 +17,7 @@ plac = "^1.3.3"
 jupyter = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
+mistune = "<2.0.0"
 dephell = "^0.8.3"
 
 [build-system]
