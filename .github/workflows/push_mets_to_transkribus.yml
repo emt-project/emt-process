@@ -34,5 +34,5 @@ jobs:
           GOOBI_BASE_URL: "https://goobi.acdh.oeaw.ac.at/viewer/metsresolver"
 
         run: |
-          pip install requirements_push_transkribus.txt
+          pip install -r requirements_push_transkribus.txt
           import-goobi-mets-to-transkribus --file-path emt_data/import_transkribus_letters.csv
